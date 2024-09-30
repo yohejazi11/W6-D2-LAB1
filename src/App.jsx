@@ -9,11 +9,11 @@ function App() {
   const [totel, fun]=useState()
 
   function changeMood(){
-    if(setMoode=="light"){
+    if(mood=="light"){
       setMoode("black")
     }
-    else if(setMoode=="dark"){
-      setMoode("white")
+    else if(mood=="black"){
+      setMoode("light")
 
     }
 
@@ -51,7 +51,7 @@ function App() {
 
 
   return (
-    <div className='w-full h-screen bg-[{mood}]'>
+    <div style={{"backgroundColor": `${mood === "light" ? 'white' : 'black'}`, "color": `${mood === "light" ? 'black' : 'white'}`}} className='w-full h-screen bg-[{mood}]'>
       <button onClick={changeMood}>{mood}</button>
       <div className='flex m-[auto] w-[50vw] gap-x-[1rem]'>
         <div className='flex flex-col w-[10vw] gap-y-[2rem]'>
